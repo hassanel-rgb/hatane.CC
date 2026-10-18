@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 11:12:51 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/15 16:37:29 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/18 13:33:30 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_isascii(int c);
 int	ft_isprint(int c);
 size_t ft_strlen(const char *s);
 void *memset(void *s, int c, size_t n);
-void explicit_bzero(void *s, size_t n);
+void ft_bzero(void *s, size_t n);
 void *memcpy(void *dest, const void *src, size_t n);
 void *memmove(void *dest, const void *src, size_t n);
 size_t ft_strlcpy(char *dst, const char *src, size_t size);

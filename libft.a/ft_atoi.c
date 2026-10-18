@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 14:17:26 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/15 16:48:11 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/18 14:20:54 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,9 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	return (r * s);
+}
+int main(){
+	printf("%d\n", ft_atoi("-9223372036854775806"));
+	printf("%d\n", atoi("-9223372036854775806"));
+	return 0;
 }
