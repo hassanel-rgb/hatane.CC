@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 14:11:42 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/14 14:34:06 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/18 18:25:02 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	l = 0;
 	while (i < size - 1 && src[l])
 		dst[i++] = src[l++];
-	dst[l] = '\0';
+	dst[i] = '\0';
 	return (dst_len + src_len);
 }
