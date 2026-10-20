@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 14:36:20 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/19 18:59:41 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/20 12:06:36 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,3 @@ char	*ft_itoa(int n)
 		n /= 10;
 	}
 	return (s);
-}
-int main(){
-    char *str;
-    
-    str = ft_itoa(-2147483648);
-    printf("%s\n", str);
-    free(str);
-    return 0;
-}

@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 11:50:11 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/15 16:49:08 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/20 14:56:18 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
+
 	i = 0;
 	while (s[i])
 		i++;

@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 11:12:51 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/19 18:11:51 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/20 16:01:30 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ char *ft_strjoin(char const *s1, char const *s2);
 char *ft_strtrim(char const *s1, char const *set);
 char *ft_itoa(int n);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void ft_striteri(char *s, void (*f)(unsigned int, char*));
 #endif
