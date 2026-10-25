@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 12:16:29 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/19 14:25:00 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/21 14:49:06 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!p)
 		return (NULL);
 	ft_memcpy(p, s1 + e_len, total);
+	p[total] = '\0';
 	return (p);
 }

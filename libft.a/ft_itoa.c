@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 14:36:20 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/20 12:06:36 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/23 12:38:55 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,34 @@ static int	b_len(int n)
 }
 char	*ft_itoa(int n)
 {
-	char *s;
-	size_t len;
+	char	*s;
+	size_t	len;
+	long nb;
 
-	len = b_len(n);
+	nb = n;
+	len = b_len(nb);
 	s = malloc(len + 1);
 	if (!s)
 		return (NULL);
 	s[len] = '\0';
-	if (n < 0)
+	if (nb < 0)
 	{
 		s[0] = '-';
-		n = -n;
+		nb = -nb;
 	}
-	if (n == 0)
+	if (nb == 0)
 		s[0] = '0';
-	while (n > 0)
+	while (nb > 0)
 	{
-		s[--len] = (n % 10) + '0';
-		n /= 10;
+		s[--len] = (nb % 10) + '0';
+		nb /= 10;
 	}
 	return (s);
+}
+int main()
+{
+	char *res = ft_itoa(3648);
+	printf("%s\n", res);
+	free(res);
+	return 0;
+}

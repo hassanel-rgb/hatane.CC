@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 17:27:40 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/18 18:27:52 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/21 14:49:33 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcpy(ptr, s1, total + 1);
 	ft_strlcat(ptr, s2, total + 1);
 	return (ptr);
-}
-int main(){
-    char *str = ft_strjoin("", "world");
-    printf("%s\n", str);
-    return 0;
 }

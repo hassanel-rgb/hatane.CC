@@ -6,12 +6,28 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:59:35 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/20 16:00:29 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/21 13:12:54 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*)){
-    
+static void	lower(unsigned int c, char *p)
+{
+	(void)c;
+	if (*p >= 'A' && *p <= 'Z')
+		*p += 32;
+}
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	size_t i;
+
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
