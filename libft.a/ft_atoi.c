@@ -32,16 +32,12 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		r = r * 10 + (nptr[i] - '0');
-		if (r > 9223372036854775807ULL && s == 1)
-			return (-1);
-		if (r > 9223372036854775807ULL && s == -1)
-			return (0);
 		i++;
 	}
 	return (r * s);
 }
 int main(){
-	printf("%d\n", ft_atoi("-9223372036854775806"));
-	printf("%d\n", atoi("-9223372036854775806"));
+	printf("%d\n", ft_atoi("-9223372036854775808"));
+	printf("%d\n", atoi("-9223372036854775808"));
 	return 0;
 }
