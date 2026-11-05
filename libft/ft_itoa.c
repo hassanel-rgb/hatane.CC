@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "limits.h"
-
 
 static int	b_len(int n)
 {
@@ -54,8 +52,4 @@ char	*ft_itoa(int n)
 		nb /= 10;
 	}
 	return (s);
-<<<<<<< HEAD:libft/ft_itoa.c
 }
-=======
-}
->>>>>>> f6740fe (update libft):libft.a/ft_itoa.c

@@ -177,7 +177,3 @@ They helped with:
 - Understanding project requirements and documentation.
 
 AI was used as a learning support tool. The implementation and testing of the functions were carried out as part of the learning process.
-
-## Author
-
-**haelkhad**

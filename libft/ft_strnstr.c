@@ -14,27 +14,24 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-<<<<<<< HEAD:libft/ft_strnstr.c
-	size_t i;
-	size_t j;
-=======
 	char	*big1;
 	char	*little1;
 	size_t	i;
 	size_t	j;
->>>>>>> f6740fe (update libft):libft.a/ft_strnstr.c
 
-	if (little[0] == '\0')
-		return (char *)(big);
+	big1 = (char *)big;
+	little1 = (char *)little;
+	if (little1[0] == '\0')
+		return (big1);
 	i = 0;
-	while (i < len && big[i])
+	while (i < len && big1[i])
 	{
 		j = 0;
-		while (i + j < len && little[j] && big[i + j] == little[j])
+		while (big1[i + j] && little1[j] && big1[i + j] == little1[j])
 			j++;
-		if (little[j] == '\0')
-			return (char *)(&big[i]);
+		if (little1[j] == '\0')
+			return (&big1[i]);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

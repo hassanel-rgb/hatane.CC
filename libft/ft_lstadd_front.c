@@ -19,8 +19,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
-<<<<<<< HEAD:libft/ft_lstadd_front.c
-=======
 
 // int	main(void)
 // {
@@ -48,4 +46,3 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 // 	free(new);
 // 	return (0);
 // }
->>>>>>> f6740fe (update libft):libft.a/ft_lstadd_front.c

@@ -100,8 +100,4 @@ char	**ft_split(char const *s, char c)
 	if (!res)
 		return (NULL);
 	return (fill_tab(s, c, res));
-<<<<<<< HEAD:libft/ft_split.c
 }
-=======
-}
->>>>>>> f6740fe (update libft):libft.a/ft_split.c

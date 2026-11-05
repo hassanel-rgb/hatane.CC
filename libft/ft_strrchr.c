@@ -14,26 +14,17 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	i = ft_strlen(s);
 	while (i > 0)
 	{
-<<<<<<< HEAD:libft/ft_strrchr.c
-		if (s[i] == (unsigned char)c)
-			return (char *)(&s[i]);
-		i--;
-	}
-	if (s[i] == (unsigned char)c)
-		return (char *)(&s[i]);
-=======
 		if (s[i] == c)
 			return ((char *)(&s[i]));
 		i--;
 	}
 	if (s[i] == c)
 		return ((char *)(&s[i]));
->>>>>>> f6740fe (update libft):libft.a/ft_strrchr.c
 	return (NULL);
 }
