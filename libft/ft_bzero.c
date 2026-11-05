@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 13:46:46 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/18 13:37:05 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/30 18:32:07 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *str;
-	size_t i;
+	char	*str;
+	size_t	i;
 
 	str = (char *)s;
 	i = 0;

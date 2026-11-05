@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 17:27:40 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/21 14:49:33 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/30 18:25:49 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *ptr;
-	size_t total;
+	char	*ptr;
+	size_t	total;
 
 	total = ft_strlen(s1) + ft_strlen(s2);
 	ptr = malloc(total + 1);

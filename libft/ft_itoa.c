@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 14:36:20 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/23 12:38:55 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/05 12:24:40 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ static int	b_len(int n)
 	}
 	return (count);
 }
+
 char	*ft_itoa(int n)
 {
 	char	*s;
 	size_t	len;
-	long nb;
+	long	nb;
 
 	nb = n;
 	len = b_len(nb);
@@ -53,4 +54,8 @@ char	*ft_itoa(int n)
 		nb /= 10;
 	}
 	return (s);
+<<<<<<< HEAD:libft/ft_itoa.c
 }
+=======
+}
+>>>>>>> f6740fe (update libft):libft.a/ft_itoa.c

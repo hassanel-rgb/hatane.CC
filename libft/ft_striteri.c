@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 15:59:35 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/21 13:12:54 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/30 18:25:53 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 // }
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t i;
+	size_t	i;
 
 	if (!s)
 		return ;

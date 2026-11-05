@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 16:36:38 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/18 17:54:15 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/30 18:36:05 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *ptr;
+	void	*ptr;
+
 	if (nmemb == 0 || size == 0)
 		return (malloc(1));
 	if (size != 0 && nmemb > (size_t)-1 / size)

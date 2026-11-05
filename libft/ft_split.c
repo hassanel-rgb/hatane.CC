@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 15:34:38 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/23 13:11:55 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/05 12:25:48 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,14 @@ static int	count_words(char const *str, char c)
 static char	*ft_strndup(char const *s, int n)
 {
 	char	*word;
-	int	i;
+	int		i;
 
 	word = malloc(n + 1);
 	if (!word)
 		return (NULL);
 	i = 0;
-	while (i < n){
+	while (i < n)
+	{
 		word[i] = s[i];
 		i++;
 	}
@@ -52,15 +53,16 @@ static char	*ft_strndup(char const *s, int n)
 
 static void	*free_all(char **tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (tab[i]){
+	while (tab[i])
+	{
 		free(tab[i]);
 		i++;
 	}
 	free(tab);
-	return NULL;
+	return (NULL);
 }
 
 static char	**fill_tab(char const *s, char c, char **tab)
@@ -74,19 +76,20 @@ static char	**fill_tab(char const *s, char c, char **tab)
 		while (*s && *s == c)
 			s++;
 		if (!*s)
-			break;
+			break ;
 		len = 0;
 		while (s[len] && s[len] != c)
 			len++;
 		tab[i] = ft_strndup(s, len);
 		if (!tab[i])
-			return free_all(tab);
+			return (free_all(tab));
 		s += len;
 		i++;
 	}
 	tab[i] = NULL;
 	return (tab);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
@@ -97,4 +100,8 @@ char	**ft_split(char const *s, char c)
 	if (!res)
 		return (NULL);
 	return (fill_tab(s, c, res));
+<<<<<<< HEAD:libft/ft_split.c
 }
+=======
+}
+>>>>>>> f6740fe (update libft):libft.a/ft_split.c

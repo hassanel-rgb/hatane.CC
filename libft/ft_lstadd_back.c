@@ -1,16 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/30 18:30:26 by haelkhad          #+#    #+#             */
+/*   Updated: 2026/10/30 18:30:27 by haelkhad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new){
-    if ( *lst == NULL){
-        *lst = new;
-        return;
-    }
-    
-    t_list *head;
-    head = *lst;
-    while (head->next != NULL)
-        head = head->next;
-    head->next = new;
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*head;
+
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	head = *lst;
+	while (head->next != NULL)
+		head = head->next;
+	head->next = new;
 }
 
 // int main(){
@@ -18,7 +32,6 @@ void ft_lstadd_back(t_list **lst, t_list *new){
 //     int b = 22;
 //     int c = 12;
 //     int d = 43;
-
 
 //     t_list *head;
 //     t_list *n1 = malloc(sizeof(t_list));
@@ -28,7 +41,7 @@ void ft_lstadd_back(t_list **lst, t_list *new){
 //         free(n3);
 //         free(n2);
 //         free(n1);
-//         return 1;
+//         return (1);
 //     }
 
 //     head = n1;
@@ -44,7 +57,7 @@ void ft_lstadd_back(t_list **lst, t_list *new){
 //         free(n3);
 //         free(n2);
 //         free(n1);
-//         return 1;
+//         return (1);
 //     }
 //     new_node->content = &d;
 //     new_node->next = NULL;
@@ -58,5 +71,5 @@ void ft_lstadd_back(t_list **lst, t_list *new){
 //     free(n3);
 //     free(n2);
 //     free(n1);
-//     return 0;
+//     return (0);
 // }

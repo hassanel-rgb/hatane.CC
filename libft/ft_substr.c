@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 16:03:27 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/18 17:27:17 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/30 18:24:52 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *str;
-	size_t l;
+	char	*str;
+	size_t	l;
 
 	if (!s)
 		return (NULL);

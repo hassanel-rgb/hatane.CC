@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 16:00:59 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/15 16:48:59 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/30 18:25:57 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s)
 {
-	char *ptr;
-	size_t i;
+	char	*ptr;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

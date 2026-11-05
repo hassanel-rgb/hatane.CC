@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 16:14:52 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/21 14:49:11 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/10/30 18:35:46 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,20 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i > 0)
 	{
+<<<<<<< HEAD:libft/ft_strrchr.c
 		if (s[i] == (unsigned char)c)
 			return (char *)(&s[i]);
 		i--;
 	}
 	if (s[i] == (unsigned char)c)
 		return (char *)(&s[i]);
+=======
+		if (s[i] == c)
+			return ((char *)(&s[i]));
+		i--;
+	}
+	if (s[i] == c)
+		return ((char *)(&s[i]));
+>>>>>>> f6740fe (update libft):libft.a/ft_strrchr.c
 	return (NULL);
 }
