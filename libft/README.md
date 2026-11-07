@@ -23,13 +23,6 @@ The library is designed to be reusable in future C projects.
 
 ### Compilation
 
-To compile the library, clone the repository and enter the project directory:
-
-```bash
-git clone https://github.com/hassanel-rgb/hatane.CC.git
-cd hatane.CC/libft.a
-```
-
 Compile the library using:
 
 ```bash
