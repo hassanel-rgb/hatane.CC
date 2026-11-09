@@ -12,13 +12,6 @@
 
 #include "libft.h"
 
-// static char	upper(unsigned int i, char c)
-// {
-// 	(void)i;
-// 	if (c >= 'a' && c <= 'z')
-// 		c -= 32;
-// 	return (c);
-// }
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*p;

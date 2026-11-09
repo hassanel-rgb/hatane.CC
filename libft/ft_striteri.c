@@ -12,12 +12,6 @@
 
 #include "libft.h"
 
-// static void	lower(unsigned int c, char *p)
-// {
-// 	(void)c;
-// 	if (*p >= 'A' && *p <= 'Z')
-// 		*p += 32;
-// }
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;

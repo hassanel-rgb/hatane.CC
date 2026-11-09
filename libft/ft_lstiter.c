@@ -12,11 +12,6 @@
 
 #include "libft.h"
 
-// static void increment(void *content){
-//     int *n = content;
-//     (*n)++;
-// }
-
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
