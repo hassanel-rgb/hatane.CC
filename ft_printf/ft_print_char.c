@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/14 11:58:03 by haelkhad          #+#    #+#             */
+/*   Updated: 2026/11/14 12:21:14 by haelkhad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_print_char(int c)
+int	ft_print_char(int c)
 {
-    char    x;
-    x = (char)c;
-    if (write(1, &x, 1) == -1)
-        return -1;
-    return 1;
+	char	x;
+
+	x = (char)c;
+	if (write(1, &x, 1) == -1)
+		return (-1);
+	return (1);
 }

@@ -1,20 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/14 12:03:05 by haelkhad          #+#    #+#             */
+/*   Updated: 2026/11/14 12:23:26 by haelkhad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_print_str(char *s)
+int	ft_print_str(char *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (!s)
-    {
-        write(1, "(null)", 6);
-        return 6;
-    }
-    while(s[i])
-    {
-        if (write(1, &s[i], 1) == -1)
-            return -1;
-        i++;
-    }
-    return i;
+	i = 0;
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (s[i])
+	{
+		if (write(1, &s[i], 1) == -1)
+			return (-1);
+		i++;
+	}
+	return (i);
 }
