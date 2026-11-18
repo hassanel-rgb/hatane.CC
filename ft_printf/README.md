@@ -120,15 +120,6 @@ No complex data structures are required because the project mainly relies on seq
 - [C Reference](https://en.cppreference.com/w/c.html)
 - [42 School](https://42.fr/)
 
-### Testing
-
-The project was tested by comparing the output and return values of `ft_printf()` with the original `printf()` function.
-
-Additional testing resources:
-
-- Custom test cases covering all supported conversions and edge cases.
-- [Tripouille/printfTester](https://github.com/Tripouille/printfTester)
-
 ### AI Usage
 
 AI tools were used as a learning and assistance resource during this project.

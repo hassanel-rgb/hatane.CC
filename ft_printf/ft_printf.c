@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 12:03:16 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/14 12:24:20 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/18 15:13:25 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_format(va_list ap, const char format)
 		count = ft_print_hex(va_arg(ap, unsigned int),
 				"0123456789abcdef");
 	else if (format == 'X')
-		count = ft_print_hex(va_arg(ap, unsigned int),
+		count = ft_print_hex(va_arg(ap, unsigned long),
 				"0123456789ABCDEF");
 	else if (format == 'p')
 		count = ft_print_ptr(va_arg(ap, void *));
@@ -38,9 +38,16 @@ static int	ft_format(va_list ap, const char format)
 	return (count);
 }
 
+static int	error(va_list ap)
+{
+	va_end(ap);
+	return (-1);
+}
+
 int	ft_printf(const char *f, ...)
 {
 	va_list	ap;
+	int		r;
 	int		count;
 	int		i;
 
@@ -49,16 +56,16 @@ int	ft_printf(const char *f, ...)
 	i = 0;
 	while (f[i])
 	{
-		if (f[i] == '%')
-		{
-			count += ft_format(ap, f[i + 1]);
-			i += 2;
-		}
+		if (f[i] == '%' && f[i + 1] == '\0')
+			return (error(ap));
+		else if (f[i] == '%')
+			r = ft_format(ap, f[++i]);
 		else
-		{
-			count += ft_print_char(f[i]);
-			i++;
-		}
+			r = ft_print_char(f[i]);
+		if (r == -1)
+			return (error(ap));
+		count += r;
+		i++;
 	}
 	va_end(ap);
 	return (count);

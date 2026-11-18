@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 12:02:51 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/14 12:22:28 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/18 10:00:45 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int	ft_print_nbr(int n)
 	if (n > 9)
 		count += ft_print_nbr(n / 10);
 	c = n % 10 + '0';
-	write(1, &c, 1);
+	if (write(1, &c, 1) == -1)
+		return (-1);
 	count++;
 	return (count);
 }

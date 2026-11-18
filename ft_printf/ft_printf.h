@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 12:03:37 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/14 12:13:31 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/16 08:44:37 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int	ft_print_str(char *s);
 int	ft_print_nbr(int n);
 int	ft_print_uns(unsigned int nb);
 int	ft_print_ptr(void *p);
-int	ft_print_hex(unsigned long long nbr, char *hex);
+int	ft_print_hex(unsigned long nbr, char *hex);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 12:02:40 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/14 12:21:58 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/16 08:44:29 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_hex(unsigned long long nbr, char *hex)
+int	ft_print_hex(unsigned long nbr, char *hex)
 {
 	int		count;
 	char	c;
