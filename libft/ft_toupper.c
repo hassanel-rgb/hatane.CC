@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/14 11:58:03 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/18 10:00:18 by haelkhad         ###   ########.fr       */
+/*   Created: 2026/10/14 14:34:23 by haelkhad          #+#    #+#             */
+/*   Updated: 2026/10/20 12:19:34 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_char(int c)
+int	ft_toupper(int c)
 {
-	char	x;
-
-	x = (char)c;
-	if (write(1, &x, 1) == -1)
-		return (-1);
-	return (1);
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }

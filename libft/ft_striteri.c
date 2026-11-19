@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/14 12:03:05 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/18 14:51:59 by haelkhad         ###   ########.fr       */
+/*   Created: 2026/10/20 15:59:35 by haelkhad          #+#    #+#             */
+/*   Updated: 2026/10/30 18:25:53 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_str(char *s)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	i;
+	size_t	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
-	if (!s)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
 	while (s[i])
 	{
-		if (write(1, &s[i], 1) == -1)
-			return (-1);
+		f(i, &s[i]);
 		i++;
 	}
-	return (i);
 }

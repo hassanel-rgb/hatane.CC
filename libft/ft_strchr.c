@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_uns.c                                     :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/14 12:03:11 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/14 12:23:53 by haelkhad         ###   ########.fr       */
+/*   Created: 2026/10/14 14:41:12 by haelkhad          #+#    #+#             */
+/*   Updated: 2026/10/30 18:35:05 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_print_uns(unsigned int nb)
+char	*ft_strchr(const char *s, int c)
 {
-	int		count;
-	char	c;
+	int	i;
 
-	count = 0;
-	if (nb > 9)
-		count += ft_print_uns(nb / 10);
-	c = nb % 10 + '0';
-	write(1, &c, 1);
-	count++;
-	return (count);
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)(&s[i]));
+		i++;
+	}
+	if (s[i] == (unsigned char)c)
+		return ((char *)(&s[i]));
+	return (NULL);
 }
