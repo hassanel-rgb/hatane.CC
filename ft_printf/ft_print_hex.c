@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/15 14:17:26 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/07 16:50:45 by haelkhad         ###   ########.fr       */
+/*   Created: 2026/11/14 12:02:40 by haelkhad          #+#    #+#             */
+/*   Updated: 2026/11/19 11:26:21 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_print_hex(unsigned long nbr, char *hex)
 {
-	int		i;
-	int		s;
-	long	r;
+	int		count;
+	int		tmp;
+	char	c;
 
-	i = 0;
-	s = 1;
-	r = 0;
-	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	count = 0;
+	if (nbr > 15)
 	{
-		if (nptr[i] == '-')
-			s *= -1;
-		i++;
+		tmp = ft_print_hex(nbr / 16, hex);
+		if (tmp == -1)
+			return (-1);
+		count += tmp;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		r = r * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (r * s);
+	c = hex[nbr % 16];
+	if (write(1, &c, 1) == -1)
+		return (-1);
+	count++;
+	return (count);
 }

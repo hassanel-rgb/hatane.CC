@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/15 13:12:26 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/10/30 18:25:18 by haelkhad         ###   ########.fr       */
+/*   Created: 2026/11/14 12:03:37 by haelkhad          #+#    #+#             */
+/*   Updated: 2026/11/19 11:18:38 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
-{
-	size_t	i;
-	size_t	j;
+# include <stdarg.h>
+# include <unistd.h>
 
-	if (little[0] == '\0')
-		return ((char *)big);
-	i = 0;
-	while (i < len && big[i])
-	{
-		j = 0;
-		while (i + j < len && little[j] && big[i + j] == little[j])
-		{
-			if (little[j + 1] == '\0')
-				return ((char *)&big[i]);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
+int	ft_printf(const char *f, ...);
+int	ft_print_char(int c);
+int	ft_print_str(char *s);
+int	ft_print_nbr(int n);
+int	ft_print_uns(unsigned int nb);
+int	ft_print_ptr(void *p);
+int	ft_print_hex(unsigned long nbr, char *hex);
+
+#endif
