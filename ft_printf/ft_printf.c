@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 12:03:16 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/18 15:13:25 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/19 13:37:37 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,14 @@ static int	ft_format(va_list ap, const char format)
 		count = ft_print_hex(va_arg(ap, unsigned int),
 				"0123456789abcdef");
 	else if (format == 'X')
-		count = ft_print_hex(va_arg(ap, unsigned long),
+		count = ft_print_hex(va_arg(ap, unsigned int),
 				"0123456789ABCDEF");
 	else if (format == 'p')
 		count = ft_print_ptr(va_arg(ap, void *));
 	else if (format == '%')
 		count = ft_print_char('%');
+	else
+		count = ft_print_char(format);
 	return (count);
 }
 

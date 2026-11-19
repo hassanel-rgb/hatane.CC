@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 12:02:59 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/18 10:35:04 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/19 11:19:44 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	ft_print_ptr(void *p)
 	if (write(1, "0x", 2) == -1)
 		return (-1);
 	count += 2;
-	return (count + ft_print_hex((unsigned long long)p,
+	return (count + ft_print_hex((unsigned long)p,
 			"0123456789abcdef"));
 }
