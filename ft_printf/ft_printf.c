@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 12:03:16 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/19 18:37:59 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/19 18:44:40 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,8 @@ static int	ft_format(va_list ap, const char format)
 	else if (format == '%')
 		count = ft_print_char('%');
 	else
-	{
 		count = ft_print_char('%');
-		count += ft_print_char(format);
-	}
+	count += ft_print_char(format);
 	return (count);
 }
 
