@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 12:03:16 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/19 18:17:25 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/19 18:37:59 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,3 @@ int	ft_printf(const char *f, ...)
 	va_end(ap);
 	return (count);
 }
-
