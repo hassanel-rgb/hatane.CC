@@ -6,39 +6,48 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 12:03:16 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/19 18:44:40 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/20 18:04:33 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+static int	ft_print_invalid(char c)
+{
+	int	r1;
+	int	r2;
+
+	r1 = ft_print_char('%');
+	if (r1 == -1)
+		return (-1);
+	r2 = ft_print_char(c);
+	if (r2 == -1)
+		return (-1);
+	return (r1 + r2);
+}
+
 static int	ft_format(va_list ap, const char format)
 {
-	int	count;
-
-	count = 0;
 	if (format == 'c')
-		count = ft_print_char(va_arg(ap, int));
+		return (ft_print_char(va_arg(ap, int)));
 	else if (format == 's')
-		count = ft_print_str(va_arg(ap, char *));
+		return (ft_print_str(va_arg(ap, char *)));
 	else if (format == 'd' || format == 'i')
-		count = ft_print_nbr(va_arg(ap, int));
+		return (ft_print_nbr(va_arg(ap, int)));
 	else if (format == 'u')
-		count = ft_print_uns(va_arg(ap, unsigned int));
+		return (ft_print_uns(va_arg(ap, unsigned int)));
 	else if (format == 'x')
-		count = ft_print_hex(va_arg(ap, unsigned int),
-				"0123456789abcdef");
+		return (ft_print_hex(va_arg(ap, unsigned int),
+				"0123456789abcdef"));
 	else if (format == 'X')
-		count = ft_print_hex(va_arg(ap, unsigned int),
-				"0123456789ABCDEF");
+		return (ft_print_hex(va_arg(ap, unsigned int),
+				"0123456789ABCDEF"));
 	else if (format == 'p')
-		count = ft_print_ptr(va_arg(ap, void *));
+		return (ft_print_ptr(va_arg(ap, void *)));
 	else if (format == '%')
-		count = ft_print_char('%');
+		return (ft_print_char('%'));
 	else
-		count = ft_print_char('%');
-	count += ft_print_char(format);
-	return (count);
+		return (ft_print_invalid(format));
 }
 
 static int	error(va_list ap)
@@ -54,6 +63,8 @@ int	ft_printf(const char *f, ...)
 	int		count;
 	int		i;
 
+	if (!f)
+		return (-1);
 	va_start(ap, f);
 	count = 0;
 	i = 0;
