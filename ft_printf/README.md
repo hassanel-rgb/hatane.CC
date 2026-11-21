@@ -106,7 +106,7 @@ The project uses simple C data types and standard variadic argument handling:
 - `char *`: Used to access format strings and hexadecimal character sets.
 - `int`: Used for signed values and character counting.
 - `unsigned int`: Used for unsigned decimal and hexadecimal conversions.
-- `unsigned long long`: Used for hexadecimal number conversion and pointer representation.
+- `unsigned long`: Used for hexadecimal number conversion and pointer representation.
 
 No complex data structures are required because the project mainly relies on sequential parsing and recursive conversion.
 
@@ -145,10 +145,10 @@ The program processes the format string using a **single-pass linear scan** from
 **Justification:** Variadic arguments must be consumed sequentially in the exact order they appear in the format string, making a single-pass scan natural, direct, and easy to maintain under the 42 Norm. Recursive base conversion avoids allocating temporary digit buffers or performing manual reversal, while call depth stays tiny (at most ~10 levels for 32-bit integers and ~16 for 64-bit pointers). The trade-off is minor call-frame overhead per digit compared to an iterative buffer, which is negligible for `write()`-bound formatting.
 
 ### Chosen Data Structure: Primitive C Types & `va_list`
-Rather than complex structures (such as linked lists, trees, or hash tables), the implementation uses primitive types (`int`, `unsigned int`, `unsigned long long`, `char *`) alongside `va_list` from `<stdarg.h>`.
+Rather than complex structures (such as linked lists, trees, or hash tables), the implementation uses primitive types (`int`, `unsigned int`, `unsigned long`, `char *`) alongside `va_list` from `<stdarg.h>`.
 
 - `va_list` manages sequential access to variadic arguments.
 - `char *` points to the format string and hexadecimal base lookup strings.
-- `int`, `unsigned int`, and `unsigned long long` represent signed/unsigned integers, counts, and addresses accurately.
+- `int`, `unsigned int`, and `unsigned long` represent signed/unsigned integers, counts, and addresses accurately.
 
 **Justification:** `ft_printf` streams output immediately without storing a dynamic collection of elements to search, sort, or resize later. Relying on stack values and `va_list` instead of heap-allocated data structures keeps memory usage minimal and avoids memory-leak risks.
