@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 12:03:11 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/14 12:23:53 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/21 21:00:09 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_print_uns(unsigned int nb)
 	if (nb > 9)
 		count += ft_print_uns(nb / 10);
 	c = nb % 10 + '0';
-	write(1, &c, 1);
+	if (write(1, &c, 1) == -1)
+		return (-1);
 	count++;
 	return (count);
 }

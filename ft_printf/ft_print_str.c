@@ -6,7 +6,7 @@
 /*   By: haelkhad <haelkhad@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/14 12:03:05 by haelkhad          #+#    #+#             */
-/*   Updated: 2026/11/18 14:51:59 by haelkhad         ###   ########.fr       */
+/*   Updated: 2026/11/21 20:59:37 by haelkhad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	ft_print_str(char *s)
 	i = 0;
 	if (!s)
 	{
-		write(1, "(null)", 6);
+		if (write(1, "(null)", 6) == -1)
+			return (-1);
 		return (6);
 	}
 	while (s[i])
