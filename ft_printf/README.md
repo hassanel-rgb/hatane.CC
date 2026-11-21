@@ -134,3 +134,21 @@ They were used for:
 
 AI assistance was used for explanations, suggestions, and code review. The implementation, testing, and final code decisions were carried out by the student.
 
+## Algorithm and Data Structures
+
+### Chosen Algorithm: Linear Format Parsing & Recursive Base Conversion
+The program processes the format string using a **single-pass linear scan** from left to right (`O(n)` time relative to the format string length `n`), paired with **recursive base division** for numeric and pointer conversions (`O(log_b(k))` calls, where `b` is base `10` or `16`).
+
+- **Format string scan:** Non-`%` characters are written directly via `write()`, while `%` triggers specifier lookup and argument retrieval through `va_arg()`.
+- **Recursive number conversion:** Values are divided by `10` or `16` down to the base case and printed during recursion unwinding so digits appear in most-significant-to-least-significant order without reversing an array.
+
+**Justification:** Variadic arguments must be consumed sequentially in the exact order they appear in the format string, making a single-pass scan natural, direct, and easy to maintain under the 42 Norm. Recursive base conversion avoids allocating temporary digit buffers or performing manual reversal, while call depth stays tiny (at most ~10 levels for 32-bit integers and ~16 for 64-bit pointers). The trade-off is minor call-frame overhead per digit compared to an iterative buffer, which is negligible for `write()`-bound formatting.
+
+### Chosen Data Structure: Primitive C Types & `va_list`
+Rather than complex structures (such as linked lists, trees, or hash tables), the implementation uses primitive types (`int`, `unsigned int`, `unsigned long long`, `char *`) alongside `va_list` from `<stdarg.h>`.
+
+- `va_list` manages sequential access to variadic arguments.
+- `char *` points to the format string and hexadecimal base lookup strings.
+- `int`, `unsigned int`, and `unsigned long long` represent signed/unsigned integers, counts, and addresses accurately.
+
+**Justification:** `ft_printf` streams output immediately without storing a dynamic collection of elements to search, sort, or resize later. Relying on stack values and `va_list` instead of heap-allocated data structures keeps memory usage minimal and avoids memory-leak risks.
